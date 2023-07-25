@@ -1,0 +1,26 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="3.0"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <persistence-unit
+            name="default"
+            transaction-type="RESOURCE_LOCAL"
+    >
+        <!--Dichiara qui le classi Entity -->
+        <class>org.nicolaclemente.jpa.Entity.Employee</class>
+        <class>org.nicolaclemente.jpa.Entity.Company</class>
+        <class>org.nicolaclemente.jpa.Entity.Salary</class>
+
+        <properties>
+            <property name="hibernate.jdbc.time_zone" value="UTC"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/its_jpa"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="root"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="data.sql"/>
+        </properties>
+    </persistence-unit>
+</persistence>
