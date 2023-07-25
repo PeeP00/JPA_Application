@@ -12,9 +12,18 @@ import org.nicolaclemente.jpa.Repository.EmployeeRepositoryImpl;
 
 import java.util.Optional;
 
+/**
+ * classe Main
+ */
+
 public class Main {
     @PersistenceContext
     EntityManager entityManager;
+
+    /**
+     *
+     * @param args
+     */
 
     public static void main(String[] args) {
 
